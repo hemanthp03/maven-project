@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'GOL'}
+    agent { label 'MAVEN'}
     triggers {
         cron('H * * * *')
         pollSCM('* * * * *')
@@ -8,7 +8,7 @@ pipeline {
         stage('scm') {
             steps {
 
-                git branch: 'master', url: 'https://github.com/asquarezone/game-of-life.git'
+                git branch: 'master', url: 'https://github.com/hemanthp03/maven-project.git'
             }
         }
         stage('build') {
@@ -19,7 +19,7 @@ pipeline {
     }
     post {
         success {
-            archive '**/gameoflife.war'
+            archive '**/*.war'
             junit '**/TEST-*.xml'
         }
         
