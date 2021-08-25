@@ -7,7 +7,6 @@ pipeline {
 	stages {
 		stage('scm') {
 	  	    steps {
-			
 			git branch: 'master', url: 'https://github.com/hemanthp03/maven-project.git'
 		    }
 		}
