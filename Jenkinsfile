@@ -14,7 +14,7 @@ pipeline {
 		}
 	}
 	post {
-		sucess {
+	    success {
 			artifacts '**/*.war'
 			junit '**/TEST-*.xml'
 		}
